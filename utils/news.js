@@ -5,35 +5,40 @@ var Resource=require("APICloud").Resource;
 var client = new Resource("A6966833672975", "2E50D9D3-9063-E9B5-F3B9-065418CF2432");
 
 var news = {};
+var banner_count = 0;
 
-news.getFrontPage = function(city,totalPage,callback)
+// news.getFrontPage = function(city,totalPage,callback)
+// {
+
+//   var handelNews = [];
+//   for(var i=1;i<=totalPage;i++){
+//     news.getNews(city,i,function(data){
+//       handelNews.concat(data);
+//       if( i == totalPage )
+//       {
+//         callback(handelNews);
+//       }
+//     });
+//   }
+// }
+news.getNews = function(city, cityuid, page, callback)
 {
-  var handelNews = [];
-  for(var i=1;i<=totalPage;i++){
-    news.getNews(city,i,function(data){
-      handelNews.concat(data);
-      if( i == totalPage )
-      {
-        callback(handelNews);
-      }
-    });
-  }
-}
-news.getNews = function(city, page, callback)
-{
+
+
   var start = 0;
-  var page = 1;
+
   var url = "http://j.news.163.com/hy/newshot.s?deviceid=3ccf96be431e38d659ff7cdf334cc8a9&newchannel=news&channel=10&city="+city+"&offset="+(start*page)+"&limit=40";
 
   superagent.get(url)
     .end(function (err, sres) {
       if (err) {
-        return next(err);
+        return ;
       }
 
       //处理json
       var news = eval("("+sres.text+")");
       var handelNews = [];
+
       for(var i=0;i<news.length;i++)
       {
         var item = {
@@ -42,7 +47,8 @@ news.getNews = function(city, page, callback)
                 "summary":news[i]['summary'],
                 "udid":news[i]['simhash'],
                 "from":news[i]['source'],
-                "publisTime":news[i]['publish_time']
+                "publisTime":news[i]['publish_time'],
+                "city":cityuid
         }
         if( undefined != news[i]['pic_url'] )
         {
@@ -76,11 +82,44 @@ function sendToData(item)
              if( 0 == ret.count )
              {
               model.save(item,function(ret,err){
-                // console.log(ret);
+                  if(undefined == ret || !("id" in ret))
+                  {
+                    return;
+                  }
+                  saveBanner(ret,"news");
+                //console.log(ret);
                   getContent(ret.id, ret.source);
                   // console.log("Model update:"+JSON.stringify(ret));
               });
              }
+  });
+}
+
+function saveBanner(mod,type)
+{
+
+  if(!mod["img"])
+  {
+    return false;
+  }
+  if(banner_count == 3)
+    return;
+  banner_count++;
+  var model = client.Factory("banner");
+  model.count({"filter":{"model_id":mod['id'],"model":"news"}},function (ret,err) {
+              // console.log(ret.count);
+             if( 0 == ret.count )
+             {
+              var item = {"name":mod.title,"img":mod["img"],"model":"news","model_id":mod["id"],"city":mod['city']};
+              // console.log(item);
+              model.save(item,function(ret,err){
+                  if(undefined == ret || !("id" in ret))
+                  {
+                    return;
+                  }
+
+             });
+            }
   });
 }
 

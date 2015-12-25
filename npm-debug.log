@@ -1,6 +1,6 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
-1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'start' ]
 2 info using npm@3.5.1
 3 info using node@v0.12.3
@@ -9,23 +9,23 @@
 6 silly lifecycle myapp@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle myapp@0.0.0~start: myapp@0.0.0
 8 verbose lifecycle myapp@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle myapp@0.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;D:\code\node\mycron\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Mozilla Firefox;C:\Windows\System32;C:\xampp\mysql\bin;C:\xampp\php;C:\Program Files\OpenVPN\bin;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Git\bin;C:\ruby\bin;C:\Program Files\nodejs\;C:\Program Files\nodejs\node_modules;C:\Python34;C:\Windows\System32\WindowsPowerShell\v1.0;C:\ProgramData\chocolatey\bin;C:\tools\apache-ant-1.9.4\bin;D:\adt-bundle-windows-x86_64-20130729\adt-bundle-windows-x86_64-20130729\sdk\platform-tools;D:\adt-bundle-windows-x86_64-20130729\adt-bundle-windows-x86_64-20130729\sdk\tools;C:\Program Files\Java\jdk1.8.0_60\bin;C:\Program Files\Java\jdk1.8.0_60\jre\bin;C:\xampp\tomcat\lib;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Heroku\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Roaming\npm
-10 verbose lifecycle myapp@0.0.0~start: CWD: D:\code\node\mycron
+9 verbose lifecycle myapp@0.0.0~start: PATH: c:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;d:\code\node\mycron\node_modules\.bin;c:\Users\Administrator\bin;.;C:\Program Files (x86)\Git\local\bin;C:\Program Files (x86)\Git\mingw\bin;C:\Program Files (x86)\Git\bin;C:\Program Files (x86)\Git\bin;c:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\Mozilla Firefox;c:\Windows\System32;c:\xampp\mysql\bin;c:\xampp\php;c:\Program Files\OpenVPN\bin;c:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Git\bin;c:\ruby\bin;c:\Program Files\nodejs\;c:\Program Files\nodejs\node_modules;c:\Python34;c:\Windows\System32\WindowsPowerShell\v1.0;c:\ProgramData\chocolatey\bin;c:\tools\apache-ant-1.9.4\bin;d:\adt-bundle-windows-x86_64-20130729\adt-bundle-windows-x86_64-20130729\sdk\platform-tools;d:\adt-bundle-windows-x86_64-20130729\adt-bundle-windows-x86_64-20130729\sdk\tools;c:\Program Files\Java\jdk1.8.0_60\bin;c:\Program Files\Java\jdk1.8.0_60\jre\bin;c:\xampp\tomcat\lib;c:\Program Files\TortoiseSVN\bin;c:\Program Files (x86)\Heroku\bin;c:\Users\Administrator\AppData\Roaming\npm;c:\ruby\devkit\bin;c:\Program Files (x86)\IDM Computer Solutions\UltraEdit;c:\Users\Administrator\AppData\Roaming\npm
+10 verbose lifecycle myapp@0.0.0~start: CWD: d:\code\node\mycron
 11 silly lifecycle myapp@0.0.0~start: Args: [ '/d /s /c', 'node ./bin/www' ]
 12 silly lifecycle myapp@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle myapp@0.0.0~start: Failed to exec start script
 14 verbose stack Error: myapp@0.0.0 start: `node ./bin/www`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:232:16)
+14 verbose stack     at EventEmitter.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:232:16)
 14 verbose stack     at EventEmitter.emit (events.js:110:17)
-14 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+14 verbose stack     at ChildProcess.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
 14 verbose stack     at ChildProcess.emit (events.js:110:17)
 14 verbose stack     at maybeClose (child_process.js:1015:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
 15 verbose pkgid myapp@0.0.0
-16 verbose cwd D:\code\node\mycron
+16 verbose cwd d:\code\node\mycron
 17 error Windows_NT 6.1.7601
-18 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+18 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
 19 error node v0.12.3
 20 error npm  v3.5.1
 21 error code ELIFECYCLE
